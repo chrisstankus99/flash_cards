@@ -2,13 +2,11 @@ class Deck
   attr_reader :cards, :count
   def initialize(cards)
     @cards = cards
-    #avoid methods in initialize
+    #fix this dont put methods in here 
     @count = cards.length
   end
 
-
-#you need to get a category with deck.cards_in_category(:Category) and use that input to find the corresponding array
-
+#could use .select here to condense this with just .select {|card| card.category == card_category}
   def cards_in_category(card_category)
     card_cate = []
     @cards.each do |card|
